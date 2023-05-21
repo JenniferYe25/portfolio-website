@@ -1,3 +1,97 @@
+@font-face {
+  font-family: "epilogue";
+  src: url(fonts/Epilogue-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "epilogue-bold";
+  src: url(fonts/Epilogue-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "epilogue-semibold";
+  src: url(fonts/Epilogue-SemiBold.ttf) format("truetype");
+}
+
+:root {
+  --primary: #78a2cc;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  font-family: "epilogue";
+}
+
+html {
+  overflow-x: hidden;
+}
+
+h1 {
+  padding-left: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
 .txt_bold {
-  color: #78a2cc;
+  color: var(--primary);
+}
+
+.arrow {
+  width: 2rem;
+  padding-right: 1rem;
+}
+
+.text {
+  font-family: "epilogue";
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.25fr 2fr;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+}
+
+.name {
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  font-family: "epilogue";
+  font-size: 1.25rem;
+  width: 13rem;
+}
+
+.name:focus {
+  outline: none;
+}
+
+.button {
+  font-family: "epilogue";
+  color: var(--primary);
+  font-size: 1.25rem;
+  background-color: white;
+  border: none;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+.nav {
+  border-top: 2px black solid;
+  height: 4vh;
+  width: 110%;
+  margin-left: -5%;
 }
