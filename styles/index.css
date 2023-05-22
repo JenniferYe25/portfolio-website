@@ -1,0 +1,23 @@
+.text {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.25fr 2fr;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.name {
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  font-size: 1.25rem;
+  width: 13rem;
+}
+
+.name:focus {
+  outline: none;
+}
