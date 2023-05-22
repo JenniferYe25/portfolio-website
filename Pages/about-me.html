@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>About Me</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-       <div class="Header">
-            <a href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default">
-                <h1>J Y</h1>
-            </a>
-       </div>
-       <div class="About Content">
-            <div class="about_test_container">
-                <div class="about_text">
-                    <h2>A Little About Me!</h2>
-                    <ul> 
-                        <!-- change bullet points to arrow image -->
-                        <li>I'm a <span class="txt_bold">Software Engineering student</span></li>
-                        <li>Super interested in <span class="txt_bold">mobile app development</span></li>
-                        <li>I would really like to see what the <span class="txt_bold">XXX</span> and <span class="txt_bold">YYY</span> industries has to offer</li>
-                        <li>At the end of the day, I want to be able apart of something that is making a <span class="txt_bold">real difference</span>, wherever I am!</li>
-                    </ul>
-                </div>
+  <head>
+    <title>About Me</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles/about-me.css" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+  </head>
+  <body>
+    <div class="Header">
+      <a
+        href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+      >
+        <h1>J Y</h1>
+      </a>
+    </div>
+    <div class="AboutContent">
+      <div class="about_test_container">
+        <h1 class="title">A Little About Me!</h1>
+        <div class="about_text">
+          <div class="grid">
+            <div class="text">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>
+                I'm a
+                <span class="txt_bold">Software Engineering student</span> 👩‍💻
+              </p>
+              <!-- <p>
+              I’m a 4th year of
+              <span class="txt_bold">Software Engineering student</span> at
+              McMaster University! 👩‍💻
+            </p> -->
             </div>
-            <div class="about_img_container">
-                <img class="about_img" src="../assets/about img.jpg" alt="Picture of me">
+            <div class="text">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>
+                Super interested in
+                <span class="txt_bold">mobile app development</span>!
+              </p>
             </div>
-       </div>
-       <nav>
-            <a href="">[ About Me ]</a>
-            <a href="./experience-selection.html">[ Experience ]</a>
-            <a href="./projects.html">[ Projects ]</a>
-            <a href="">[ Contact ] </a>
-            <a href="./fun-fact.html">[ Fun Fact ]</a>
-       </nav>
-    </body>
+            <div class="text">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>
+                I would really like to see what the
+                <span class="txt_bold">XXX</span> and
+                <span class="txt_bold">YYY</span> industries has to offer! 🤩
+              </p>
+            </div>
+            <div class="text">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>
+                At the end of the day, I want to be able to know that wherever I
+                am, I’m apart of something that is making a
+                <span class="txt_bold">real difference</span>!
+              </p>
+            </div>
+          </div>
+          <h2 class="subtitle">But that's not all!</h2>
+          <div class="grid">
+            <div class="text">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>
+                I love being crafty!<br />
+                Check out one of my
+                <span class="txt_bold" onclick="">projects</span>
+              </p>
+            </div>
+            <div class="text-last">
+              <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
+              <p>I recharge on classical ballads, RnB and pop!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about_img_container">
+        <img
+          class="about_img"
+          src="../assets/about img.jpg"
+          alt="Picture of me"
+        />
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </nav>
+    <nav class="nav-m">
+      <a href="">[ Me ]</a>
+      <a href="./experience-selection.html">[ Exp ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fact ]</a>
+    </nav>
+  </body>
 </html>

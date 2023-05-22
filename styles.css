@@ -20,11 +20,11 @@
 a {
   text-decoration: none;
   color: var(--primary);
-  font-family: "epilogue";
 }
 
 html {
   overflow-x: hidden;
+  font-family: "epilogue";
 }
 
 h1 {
@@ -46,39 +46,7 @@ p {
   padding-right: 1rem;
 }
 
-.text {
-  font-family: "epilogue";
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 0.25fr 2fr;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 85vh;
-}
-
-.grid {
-  display: grid;
-  justify-content: center;
-}
-
-.name {
-  border: none;
-  border-bottom: 2px solid var(--primary);
-  font-family: "epilogue";
-  font-size: 1.25rem;
-  width: 13rem;
-}
-
-.name:focus {
-  outline: none;
-}
-
 .button {
-  font-family: "epilogue";
   color: var(--primary);
   font-size: 1.25rem;
   background-color: white;
@@ -92,6 +60,41 @@ p {
 .nav {
   border-top: 2px black solid;
   height: 4vh;
-  width: 110%;
   margin-left: -5%;
+  padding-left: 5%;
+  justify-content: space-evenly;
+  width: 100vw;
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.nav a {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.text {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.25fr 2fr;
+}
+
+.nav-m {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-m {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    border-top: 2px black solid;
+    padding-top: 1rem;
+    margin-left: -5%;
+    padding-left: 5%;
+
+  }
+  .nav {
+    display: none;
+  }
 }
