@@ -11,12 +11,11 @@ ul {
   margin-bottom: 3rem;
 }
 
-.text-last{
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 0.25fr 2fr;
+.text-last {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.25fr 2fr;
   margin-bottom: 1rem;
-
 }
 
 .AboutContent {
@@ -24,13 +23,15 @@ ul {
   width: flex-content;
 }
 .about_text {
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
 }
 .about_img_container {
   position: relative;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .about_img {
@@ -40,8 +41,8 @@ ul {
 
 .title {
   margin: 1rem;
-  padding-top: 2rem;
 }
+
 .subtitle {
   margin: 1rem;
 }

@@ -37,10 +37,6 @@ p {
   margin-top: 0;
 }
 
-.txt_bold {
-  color: var(--primary);
-}
-
 .arrow {
   width: 2rem;
   padding-right: 1rem;
@@ -57,6 +53,24 @@ p {
   opacity: 0.5;
 }
 
+.clickable_text {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: none;
+}
+.txt_bold {
+  color: var(--primary);
+}
+
 .nav {
   border-top: 2px black solid;
   height: 4vh;
@@ -66,6 +80,8 @@ p {
   width: 100vw;
   display: flex;
   margin-bottom: 1rem;
+  position: fixed;
+  bottom: 0px;
 }
 
 .nav a {
@@ -83,17 +99,42 @@ p {
   display: none;
 }
 
-@media screen and (max-width: 700px) {
-  .nav-m {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100vw;
-    border-top: 2px black solid;
-    padding-top: 1rem;
-    margin-left: -5%;
-    padding-left: 5%;
-
+@media screen and (max-width: 800px) {
+  .menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    padding-right: 1rem;
+    display: block;
   }
+
+  .nav-m {
+    display: block;
+    text-align: end;
+    font-size: 1.5rem;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #78a2ccf5;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .nav-m a {
+    padding: 1rem 1rem 1rem 2rem;
+    font-size: 1.5rem;
+    color: white;
+    display: block;
+    transition: 0.1s;
+  }
+
+  .nav-m .closebtn {
+    top: 0;
+    font-size: 3rem;
+  }
+
   .nav {
     display: none;
   }

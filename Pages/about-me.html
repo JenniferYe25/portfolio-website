@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, inital-scale=1.0" />
   </head>
   <body>
-    <div class="Header">
+    <div class="header">
       <a
         href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+        style="cursor: pointer"
       >
         <h1>J Y</h1>
       </a>
+      <span class="menu" onclick="openNav()">&#9776; </span>
     </div>
     <div class="AboutContent">
       <div class="about_test_container">
@@ -21,15 +23,15 @@
           <div class="grid">
             <div class="text">
               <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
-              <p>
+              <!-- <p>
                 I'm a
                 <span class="txt_bold">Software Engineering student</span> 👩‍💻
+              </p> -->
+              <p>
+                I’m a 4th year of
+                <span class="txt_bold">Software Engineering student</span> at
+                McMaster University! 👩‍💻
               </p>
-              <!-- <p>
-              I’m a 4th year of
-              <span class="txt_bold">Software Engineering student</span> at
-              McMaster University! 👩‍💻
-            </p> -->
             </div>
             <div class="text">
               <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
@@ -60,14 +62,16 @@
             <div class="text">
               <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
               <p>
-                I love being crafty!<br />
+                I love being crafty! 🧶<br />
                 Check out one of my
-                <span class="txt_bold" onclick="">projects</span>
+                <span class="txt_bold clickable_text" id="about_project"
+                  >projects</span
+                >
               </p>
             </div>
             <div class="text-last">
               <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
-              <p>I recharge on classical ballads, RnB and pop!</p>
+              <p>I recharge on classical ballads, RnB and pop! 🎵</p>
             </div>
           </div>
         </div>
@@ -75,6 +79,7 @@
       <div class="about_img_container">
         <img
           class="about_img"
+          id="me"
           src="../assets/about img.jpg"
           alt="Picture of me"
         />
@@ -87,12 +92,38 @@
       <a href="">[ Contact ] </a>
       <a href="./fun-fact.html">[ Fun Fact ]</a>
     </nav>
-    <nav class="nav-m">
-      <a href="">[ Me ]</a>
-      <a href="./experience-selection.html">[ Exp ]</a>
+
+    <div id="sideNav" class="nav-m">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
       <a href="./projects.html">[ Projects ]</a>
       <a href="">[ Contact ] </a>
-      <a href="./fun-fact.html">[ Fact ]</a>
-    </nav>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </div>
+
+    <script>
+      const img = document.getElementById("me");
+      const about_project = document.getElementById("about_project");
+
+      about_project.onclick = function () {
+        let src = img.getAttribute("src");
+        if (src === "../assets/about img.jpg") {
+          img.setAttribute("src", "../assets/craft.jpg");
+        } else {
+          img.setAttribute("src", "../assets/about img.jpg");
+        }
+      };
+
+      function openNav() {
+        document.getElementById("sideNav").style.width = "15rem";
+      }
+
+      function closeNav() {
+        document.getElementById("sideNav").style.width = "0";
+      }
+    </script>
   </body>
 </html>
