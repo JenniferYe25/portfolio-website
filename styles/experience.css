@@ -1,0 +1,73 @@
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+img {
+  width: 12rem;
+  border-radius: 50%;
+  margin-right: 3rem;
+}
+
+.content {
+  display: flex;
+}
+
+.exp_content {
+  margin-top: 3rem;
+}
+
+.job_des {
+  font-size: 1.5rem;
+}
+
+.job_des li {
+  margin: 2rem;
+}
+
+.job_main {
+  display: flex;
+  margin-bottom: 3rem;
+}
+.line_seperate_v {
+  border-left: 2px solid gray;
+  height: 3rem;
+}
+
+.semi_v_nav {
+  margin-top: 3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.line_seperate_v + .year {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+/* .skills {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+} */
+
+.skills p {
+  /* margin-left: 2rem; */
+  /* margin-right: 2rem; */
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: solid 2px gray;
+  border-radius: 8px;
+}
+
+.year {
+  color: #78a2cc;
+  font-family: epilogue-bold;
+}
+.year:hover {
+  color: #bfd4db;
+}

@@ -2,33 +2,42 @@
 <html>
   <head>
     <title>Co Op Experiences</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles/experience.css" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
   </head>
   <body>
-    <div class="Header">
+    <div class="header">
       <a
         href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+        style="cursor: pointer"
       >
         <h1>J Y</h1>
       </a>
+      <span class="menu" onclick="openNav()">&#9776; </span>
     </div>
+    <!-- <div class="test"> -->
     <div class="content">
       <div class="semi_v_nav">
-        <div class="line_seperate_v"></div>
-        <p>2019</p>
-        <div class="line_seperate_v"></div>
-        <p>2020</p>
-        <div class="line_seperate_v"></div>
-        <p>2022</p>
-        <div class="line_seperate_v"></div>
-        <p>2023</p>
-        <div class="line_seperate_v"></div>
+        <hr width="1" class="line_seperate_v" />
+        <p class="year" onclick="">2019</p>
+        <hr width="1" class="line_seperate_v" />
+        <p class="year" onclick="">2020</p>
+        <hr width="1" class="line_seperate_v" />
+        <p class="year" onclick="">2022</p>
+        <hr width="1" class="line_seperate_v" />
+        <p class="year" onclick="">2023</p>
+        <hr width="1" class="line_seperate_v" />
       </div>
       <div class="exp_content">
         <div class="job_main">
-          <img src="../assets/temp.jpg" alt="company logo" />
-          <h2>Job Title</h2>
-          <h3>Company Name @ Location</h3>
+          <div class="logo">
+            <img src="../assets/temp.jpg" alt="company logo" />
+          </div>
+          <div class="title">
+            <h2>Job Title</h2>
+            <h3>Company Name @ Location</h3>
+          </div>
         </div>
         <div class="job_des">
           <ul>
@@ -48,12 +57,26 @@
         </div>
       </div>
     </div>
-    <nav class="navbar">
+    <!-- </div> -->
+    <nav class="nav">
       <a href="./about-me.html">[ About Me ]</a>
       <a href="./experience-selection.html">[ Experience ]</a>
       <a href="./projects.html">[ Projects ]</a>
       <a href="">[ Contact ] </a>
       <a href="./fun-fact.html">[ Fun Fact ]</a>
     </nav>
+
+    <div id="sideNav" class="nav-m">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./about-me.html">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
