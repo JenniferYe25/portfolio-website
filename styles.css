@@ -60,7 +60,7 @@ p {
 
 .header {
   display: flex;
-  justify-content: space-between;
+  padding-left: 2rem;
   align-items: center;
 }
 
@@ -116,7 +116,7 @@ p {
     position: fixed;
     z-index: 1;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #78a2ccf5;
     overflow-x: hidden;
     transition: 0.5s;

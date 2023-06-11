@@ -12,12 +12,21 @@ img {
   margin-right: 3rem;
 }
 
+ul {
+  padding-inline-start: 0;
+}
 .content {
   display: flex;
+  margin-top: 1rem;
 }
 
 .exp_content {
-  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100vw;
 }
 
 .job_des {
@@ -30,7 +39,8 @@ img {
 
 .job_main {
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 .line_seperate_v {
   border-left: 2px solid gray;
@@ -38,20 +48,21 @@ img {
 }
 
 .semi_v_nav {
-  margin-top: 3rem;
   margin-left: 4rem;
   margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .line_seperate_v + .year {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-/* .skills {
+.skills {
   display: flex;
-  width: 100vw;
   justify-content: space-between;
-} */
+  flex-wrap: wrap;
+}
 
 .skills p {
   /* margin-left: 2rem; */
@@ -63,11 +74,31 @@ img {
   border: solid 2px gray;
   border-radius: 8px;
 }
-
+.test {
+  display: flex;
+  flex-direction: column;
+  /* height: 100vh; */
+  justify-content: center;
+}
 .year {
   color: #78a2cc;
   font-family: epilogue-bold;
 }
 .year:hover {
   color: #bfd4db;
+}
+
+@media screen and (max-width: 700px) {
+  .semi_v_nav {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .job_main {
+    margin-bottom: 0;
+  }
+
+  .skills {
+    display: block;
+    text-align: center;
+  }
 }
