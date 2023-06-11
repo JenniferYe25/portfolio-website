@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Co Op Experiences</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-       <div class="Header">
-            <a href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default">
-                <h1>J Y</h1>
-            </a>
-       </div>
-       <div class="content">
-        <div class="semi_v_nav">
-            <div class="line_seperate_v"></div>
-                <p>2021</p>
-                <div class="line_seperate_v"></div>
-                <p>2022</p>
-                <div class="line_seperate_v"></div>
-           </div>
-           <div class="exp_content">
-            <div class="job_main">
-                <img src="../assets/temp.jpg" alt="club logo">
-                <h2>Club Title</h2>
-                <h3>Club Name @ Location</h3>
-            </div>
-            <div class="job_des">
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                    <li>Aliquam tincidunt mauris eu risus.</li>
-                    <li>Vestibulum auctor dapibus neque.</li>
-                    <li>Nunc dignissim risus id metus.</li>
-                    <li>Cras ornare tristique elit.</li>
-                    <li>Vivamus vestibulum ntulla nec ante.</li>
-                </ul>
-            </div>
-            <div class="skills">
-                <p>Skills</p>
-                <p>Skills</p>
-                <p>Skills</p>
-                <p>Skills</p>
-            </div>
-           </div>
-       </div>
-       <nav class="navbar">
-            <a href="./about-me.html">[ About Me ]</a>
-            <a href="./experience-selection.html">[ Experience ]</a>
-            <a href="./projects.html">[ Projects ]</a>
-            <a href="">[ Contact ] </a>
-            <a href="./fun-fact.html">[ Fun Fact ]</a>
-       </nav>
-    </body>
+  <head>
+    <title>Co Op Experiences</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles/experience.css" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
+  </head>
+  <body>
+    <div class="header">
+      <span class="menu" onclick="openNav()">&#9776; </span>
+      <a
+        href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+        style="cursor: pointer"
+      >
+        <h1>J Y</h1>
+      </a>
+    </div>
+    <div class="content">
+      <div class="semi_v_nav">
+        <hr width="1" class="line_seperate_v_less" />
+        <p class="year" onclick="">2021</p>
+        <hr width="1" class="line_seperate_v_less" />
+        <p class="year" onclick="">2022</p>
+        <hr width="1" class="line_seperate_v_less" />
+      </div>
+      <div class="exp_content">
+        <div class="job_main">
+          <div class="logo">
+            <img src="../assets/temp.jpg" alt="club logo" />
+          </div>
+          <div class="title">
+            <h2>Club Title</h2>
+            <h3>Club Name @ Location</h3>
+          </div>
+        </div>
+        <div class="job_des">
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Vestibulum auctor dapibus neque.</li>
+            <li>Nunc dignissim risus id metus.</li>
+            <li>Cras ornare tristique elit.</li>
+            <li>Vivamus vestibulum ntulla nec ante.</li>
+          </ul>
+        </div>
+        <div class="skills">
+          <p>Skills</p>
+          <p>Skills</p>
+          <p>Skills</p>
+          <p>Skills</p>
+        </div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="./about-me.html">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </nav>
+
+    <div id="sideNav" class="nav-m">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./about-me.html">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
+  </body>
 </html>

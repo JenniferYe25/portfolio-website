@@ -46,18 +46,18 @@ ul {
   border-left: 2px solid gray;
   height: 3rem;
 }
-
+.line_seperate_v_less {
+  border-left: 2px solid gray;
+  height: 8rem;
+}
 .semi_v_nav {
   margin-left: 4rem;
   margin-right: 4rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
-.line_seperate_v + .year {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
 .skills {
   display: flex;
   justify-content: space-between;
@@ -65,8 +65,6 @@ ul {
 }
 
 .skills p {
-  /* margin-left: 2rem; */
-  /* margin-right: 2rem; */
   padding-left: 4rem;
   padding-right: 4rem;
   padding-top: 0.5rem;
@@ -77,7 +75,6 @@ ul {
 .test {
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
   justify-content: center;
 }
 .year {
@@ -92,6 +89,8 @@ ul {
   .semi_v_nav {
     margin-left: 2rem;
     margin-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
   .job_main {
     margin-bottom: 0;
