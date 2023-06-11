@@ -79,14 +79,16 @@ p {
   justify-content: space-evenly;
   width: 100vw;
   display: flex;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   position: fixed;
   bottom: 0px;
+  background-color: white;
 }
 
 .nav a {
   font-size: 1.5rem;
   margin: 1rem;
+  background-color: white;
 }
 
 .text {
