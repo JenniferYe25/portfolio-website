@@ -3,11 +3,15 @@
   <head>
     <title>Co Op Experiences</title>
     <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles/projects.css" />
+    <meta name="viewport" content="width=device-width, inital-scale=1.0" />
   </head>
   <body>
-    <div class="Header">
+    <div class="header">
+      <span class="menu" onclick="openNav()">&#9776; </span>
       <a
         href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+        style="cursor: pointer"
       >
         <h1>J Y</h1>
       </a>
@@ -15,47 +19,83 @@
     <div class="content">
       <div class="semi_v_nav">
         <div class="line_seperate_v"></div>
-        <p>🌐</p>
+        <p class="clickable_text type">🌐</p>
         <div class="line_seperate_v"></div>
-        <p>📱</p>
+        <p class="clickable_text type">📱</p>
         <div class="line_seperate_v"></div>
-        <p>🖥</p>
+        <p class="clickable_text type">🖥</p>
         <div class="line_seperate_v"></div>
       </div>
-      <div class="bar_list">
-        <h3>Project #1</h3>
-        <h3>Project #2</h3>
-        <h3>Project #3</h3>
-        <h3>Project #4</h3>
-        <h3>Project #5</h3>
-        <h3>Project #6</h3>
-      </div>
-      <div class="project_card">
-        <h4>Name of Project</h4>
-        <p>
-          Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Praesent in nulla semper, maximus nisl quis, blandit dui. Pellentesque
-          nisi nibh, blandit id tempor vel, mollis ut ante. Mauris quis congue
-          tellus. Fusce convallis posuere ligula, non efficitur leo auctor quis.
-          Mauris hendrerit, eros non molestie varius, nisi urna mollis dui, id
-          congue purus massa a quam.
-        </p>
-        <div class="small_skills">
-          <h5>Skills</h5>
-          <h5>Skills</h5>
-          <h5>Skills</h5>
-          <h5>Skills</h5>
-          <h5>Skills</h5>
-          <h5>Skills</h5>
+      <div class="inner_content">
+        <div class="title">
+          <div>
+            <img src="../assets/arrow.png" alt="right arrow" />
+          </div>
+          <h2>Web Application</h2>
+        </div>
+        <div class="inner_most_content">
+          <div class="list_card">
+            <div class="bar_list">
+              <h3 class="p1 project clickable_text">Project #1</h3>
+              <h3 class="p2 project clickable_text">Project #2</h3>
+              <h3 class="p3 project clickable_text">Project #3</h3>
+              <h3 class="p4 project clickable_text">Project #4</h3>
+              <h3 class="p5 project clickable_text">Project #5</h3>
+              <h3 class="p6 project clickable_text">Project #6</h3>
+            </div>
+          </div>
+          <div class="project_card">
+            <div class="project_content">
+              <div class="project_header">
+                <h3 class="project_name">Name of Project</h3>
+                <div>
+                  <img
+                    src="../assets/github.png"
+                    class="github clickable_text"
+                    alt="github link"
+                  />
+                </div>
+              </div>
+              <p class="project_des">
+                Description Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Praesent in nulla semper, maximus nisl quis, blandit dui.
+                Pellentesque nisi nibh, blandit id tempor vel, mollis ut ante.
+                Mauris quis congue tellus. Fusce convallis posuere ligula, non
+                efficitur leo auctor quis. Mauris hendrerit, eros non molestie
+                varius, nisi urna mollis dui, id congue purus massa a quam.
+              </p>
+              <div class="small_skills">
+                <p>Skills</p>
+                <p>Skills</p>
+                <p>Skills</p>
+                <p>Skills</p>
+                <p>Skills</p>
+                <p>Skills</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <nav class="navbar">
+    <nav class="nav">
       <a href="./about-me.html">[ About Me ]</a>
       <a href="./experience-selection.html">[ Experience ]</a>
       <a href="">[ Projects ]</a>
       <a href="">[ Contact ] </a>
       <a href="./fun-fact.html">[ Fun Fact ]</a>
     </nav>
+
+    <div id="sideNav" class="nav-m">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./about-me.html">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
