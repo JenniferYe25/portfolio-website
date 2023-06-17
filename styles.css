@@ -117,6 +117,10 @@ p {
   color: var(--primary);
 }
 
+.selected{
+  color: #478bce85;
+}
+
 .semi_v_nav {
   margin-left: 3rem;
   display: flex;
