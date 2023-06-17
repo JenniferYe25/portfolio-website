@@ -13,6 +13,11 @@
   src: url(fonts/Epilogue-SemiBold.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "epilogue-regular";
+  src: url(fonts/Epilogue-Regular.ttf) format("truetype");
+}
+
 :root {
   --primary: #78a2cc;
 }
@@ -55,7 +60,12 @@ p {
 
 .clickable_text {
   cursor: pointer;
-  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 .header {
@@ -64,11 +74,13 @@ p {
   align-items: center;
 }
 
+.line_seperate_v {
+  border-left: 2px solid gray;
+  height: 3rem;
+}
+
 .menu {
   display: none;
-}
-.txt_bold {
-  color: var(--primary);
 }
 
 .nav {
@@ -91,14 +103,26 @@ p {
   background-color: white;
 }
 
+.nav-m {
+  display: none;
+}
+
 .text {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 0.25fr 2fr;
 }
 
-.nav-m {
-  display: none;
+.txt_bold {
+  color: var(--primary);
+}
+
+.semi_v_nav {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -139,5 +163,12 @@ p {
 
   .nav {
     display: none;
+  }
+
+  .semi_v_nav {
+    margin-left: 2rem;
+    margin-right: 0;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
 }

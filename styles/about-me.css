@@ -20,7 +20,8 @@ ul {
 
 .AboutContent {
   display: flex;
-  width: flex-content;
+  padding-bottom: 2rem;
+  align-items: center;
 }
 .about_text {
   padding-left: 2rem;
