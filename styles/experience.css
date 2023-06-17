@@ -15,18 +15,16 @@ img {
 ul {
   padding-inline-start: 0;
 }
+
 .content {
-  display: flex;
-  margin-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
 .exp_content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 calc(36rem / 16);
   width: 100vw;
 }
 
@@ -43,20 +41,10 @@ ul {
   margin-bottom: 2rem;
   align-items: center;
 }
-.line_seperate_v {
-  border-left: 2px solid gray;
-  height: 3rem;
-}
+
 .line_seperate_v_less {
   border-left: 2px solid gray;
   height: 8rem;
-}
-.semi_v_nav {
-  margin-left: 4rem;
-  margin-right: 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .skills {
@@ -70,7 +58,7 @@ ul {
   padding-right: 4rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border: solid 2px gray;
+  border: solid 4px #bfd4db;
   border-radius: 8px;
 }
 .test {
@@ -87,12 +75,6 @@ ul {
 }
 
 @media screen and (max-width: 700px) {
-  .semi_v_nav {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 4rem;
-  }
   .job_main {
     margin-bottom: 0;
   }
