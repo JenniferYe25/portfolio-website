@@ -1,0 +1,15 @@
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+th {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

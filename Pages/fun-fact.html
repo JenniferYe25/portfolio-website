@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <title>Fun Fact</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles/fun-fact.css" />
   </head>
   <body>
-    <div class="Header">
+    <div class="header">
+      <span class="menu" onclick="openNav()">&#9776; </span>
       <a
         href="https://landing.athabascau.ca/profile/jenniferye9/tab/18643516/default"
+        style="cursor: pointer"
       >
         <h1>J Y</h1>
       </a>
     </div>
-    <div>
+    <div class="center">
       <h2>Random Fun Fact!</h2>
       <p>Did you know that the days of the week has their own colour?</p>
       <table>
@@ -28,36 +31,49 @@
         </tr>
         <tr>
           <th>Tuesday</th>
-          <th>Red</th>
+          <th style="color: red">Red</th>
         </tr>
         <tr>
           <th>Wednesday</th>
-          <th>Green</th>
+          <th style="color: green">Green</th>
         </tr>
         <tr>
           <th>Thursday</th>
-          <th>Yellow</th>
+          <th style="color: yellow">Yellow</th>
         </tr>
         <tr>
           <th>Friday</th>
-          <th>Pink</th>
+          <th style="color: pink">Pink</th>
         </tr>
         <tr>
           <th>Saturday</th>
-          <th>Purple and Black</th>
+          <th style="color: purple">Purple</th>
         </tr>
         <tr>
           <th>Sunday</th>
-          <th>Orange</th>
+          <th style="color: orange">Orange</th>
         </tr>
       </table>
     </div>
-    <nav class="navbar">
+    <nav class="nav">
       <a href="./about-me.html">[ About Me ]</a>
-      <a href="./coop-experience.html">[ Experience ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
       <a href="./projects.html">[ Projects ]</a>
       <a href="./contact-selection.html">[ Contact ] </a>
-      <a href=""  class="selected">[ Fun Fact ]</a>
+      <a href="./fun-fact.html" class="selected">[ Fun Fact ]</a>
     </nav>
+
+    <div id="sideNav" class="nav-m">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./about-me.html">[ About Me ]</a>
+      <a href="./experience-selection.html">[ Experience ]</a>
+      <a href="./projects.html">[ Projects ]</a>
+      <a href="./contact-selection.html">[ Contact ] </a>
+      <a href="./fun-fact.html">[ Fun Fact ]</a>
+    </div>
+
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
