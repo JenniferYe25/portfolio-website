@@ -117,7 +117,7 @@ p {
   color: var(--primary);
 }
 
-.selected{
+.selected {
   color: #478bce85;
 }
 
@@ -150,6 +150,7 @@ p {
     background-color: #78a2ccf5;
     overflow-x: hidden;
     transition: 0.5s;
+    visibility: hidden;
   }
 
   .nav-m a {
@@ -158,6 +159,10 @@ p {
     color: white;
     display: block;
     transition: 0.1s;
+  }
+
+  .nav-m a:hover {
+    color: #4b86c1;
   }
 
   .nav-m .closebtn {
@@ -174,5 +179,14 @@ p {
     margin-right: 0;
     padding-top: 2rem;
     padding-bottom: 4rem;
+  }
+
+  .hide-active {
+    left: -100%;
+    transition: opacity 0.5s ease-out-in;
+  }
+
+  .overlay-active {
+    transition: left 0.5s ease-in-out;
   }
 }
