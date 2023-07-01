@@ -1,3 +1,24 @@
+class Queue {
+  constructor() {
+    this.elements = {};
+    this.head = 0;
+    this.tail = 0;
+  }
+  enqueue(element) {
+    this.elements[this.tail] = element;
+    this.tail++;
+  }
+  dequeue() {
+    const item = this.elements[this.head];
+    delete this.elements[this.head];
+    this.head++;
+    return item;
+  }
+  get isEmpty() {
+    return this.length === 0;
+  }
+}
+
 const img = document.getElementById("me");
 const about_project = document.getElementById("about_project");
 
@@ -38,31 +59,40 @@ if(close != null){
   })
 }
 
-const index1 = document.querySelector('.one p');
-const index2 = document.querySelector('.two p');
+const index1 = document.querySelector('.one');
+const index2 = document.querySelector('.two');
 const submit = document.querySelector('.button');
 const grid = document.querySelector('.grid');
 
-if(index1 != null && index2 != null){
-  words = [index1.textContent, index2.textContent];
-  elements = [index1, index2]
-}
 
+if(index1 != null && index2 != null){
+  elements = [index1, index2]
+  text = [index1.querySelector('p').textContent, index2.querySelector('p').textContent];
+}
+let elementQ = new Queue();
+let wordQ = new Queue();
+
+for (let i = 0; i < elements.length; i++) {
+  elementQ.enqueue(elements[i]);
+  wordQ.enqueue(text[i]);
+}
+console.log(wordQ)
 
 function printChar(word, element) {
-  console.log(word);
+  if(word == undefined || element == undefined) return
+  element.style.display = "grid"
   let i = 0;
-  element.textContent = "";
+  element.querySelector('p').textContent  = "";
   let id = setInterval(() => {
-  if (i >= word.length) {
-  clearInterval(id);
-  } else {
-  element.innerHTML += word[i];
-  i++;
-  }
+    if (i >= word.length) {
+      clearInterval(id)
+      printChar(wordQ.dequeue(), elementQ.dequeue())
+    }else{
+      element.querySelector('p').textContent += word[i];
+      i++;
+    }
   }, 100);
 }
 
-for (let i = 0; i < words.length; i++) {
-  printChar(words[i], elements[i])
-}
+printChar(wordQ.dequeue(), elementQ.dequeue())
+

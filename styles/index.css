@@ -21,3 +21,11 @@
 .name:focus {
   outline: none;
 }
+
+.two {
+  display: none;
+}
+
+.three {
+  display: none;
+}
