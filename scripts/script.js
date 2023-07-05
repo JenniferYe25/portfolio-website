@@ -4,19 +4,22 @@ class Queue {
     this.head = 0;
     this.tail = 0;
   }
-
   enqueue(element) {
     this.elements[this.tail] = element;
     this.tail++;
   }
-  
   dequeue() {
     const item = this.elements[this.head];
     delete this.elements[this.head];
     this.head++;
     return item;
   }
-
+  peek() {
+    return this.elements[this.head];
+  }
+  get length() {
+    return this.tail - this.head;
+  }
   get isEmpty() {
     return this.length === 0;
   }
@@ -95,7 +98,9 @@ function printChar(element) {
   let id = setInterval(() => {
     if (i >= word.length) {
       clearInterval(id)
-      printChar(wordQ.dequeue(), elementQ.dequeue())
+      if(!elementQ.isEmpty){
+        appear(elementQ.dequeue())
+      }
     }else{
       element.querySelector('p').textContent += word[i];
       i++;
@@ -141,14 +146,13 @@ function validateName() {
     }
     document.getElementById('name').readOnly = true;
     submit.style.display ='none';
-
-
-
+    const element = document.getElementById("include-name");
+    element.innerHTML = element.innerHTML.replace("var", name);
+    
     elementQ.enqueue(index4);
     elementQ.enqueue(index5);
     appear(elementQ.dequeue())
   }
 }
-console.log(elementQ.length)
 
 appear(elementQ.dequeue())
