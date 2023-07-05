@@ -20,20 +20,85 @@
       <div class="grid">
         <div class="text one">
           <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
-          <p>Hi, my name is Jennifer!</p>
+          <p>Hi, my name is Jennifer :)</p>
         </div>
+
         <div class="text two">
           <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
-          <p>What's your name</p>
+          <p>What's your name?</p>
         </div>
-        <form class="text three">
+
+        <form class="text three" name="Form">
           <img src="../assets/arrow.png" alt="right arrow" class="arrow" />
-          <input type="text" id="name" class="name" />
-          <input type="submit" class="button" value="[ Submit ]" />
+          <input type="text" id="name" class="name" name="name" />
+          <button
+            type="button"
+            class="button submit"
+            onclick="validateName(); return false"
+          >
+            [ Submit ]
+          </button>
         </form>
+
+        <div class="text op">
+          <img src="../assets/arrow.png" class="arrow-break" />
+          <p style="color: red">Please enter your name</p>
+        </div>
+
+        <div class="text four">
+          <img
+            src="../assets/arrow.png"
+            alt="right arrow"
+            class="arrow"
+            style="padding-top: 1rem"
+          />
+          <div>
+            <p style="white-space: pre-line">
+              Nice to meet you, var!<br />
+              What would you like to see?
+            </p>
+          </div>
+        </div>
+
+        <div class="text five">
+          <img
+            src="../assets/arrow.png"
+            alt="right arrow"
+            class="arrow-break"
+          />
+          <div>
+            <div class="buttons">
+              <button
+                class="button"
+                onclick="window.location.href = './about-me.html'"
+              >
+                [ About Me ]
+              </button>
+              <button
+                class="button"
+                onclick="window.location.href = './experience-selection.html'"
+              >
+                [ Experience ]
+              </button>
+            </div>
+            <div class="buttons">
+              <button
+                class="button"
+                onclick="window.location.href = './projects.html'"
+              >
+                [ Projects ]
+              </button>
+              <button
+                class="button"
+                onclick="window.location.href = '/contact-selection.html'"
+              >
+                [ Contact ]
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="nav"></div>
   </body>
   <script src="../scripts/script.js"></script>
 </html>

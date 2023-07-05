@@ -4,21 +4,23 @@ class Queue {
     this.head = 0;
     this.tail = 0;
   }
+
   enqueue(element) {
     this.elements[this.tail] = element;
     this.tail++;
   }
+  
   dequeue() {
     const item = this.elements[this.head];
     delete this.elements[this.head];
     this.head++;
     return item;
   }
+
   get isEmpty() {
     return this.length === 0;
   }
 }
-
 const img = document.getElementById("me");
 const about_project = document.getElementById("about_project");
 
@@ -61,28 +63,35 @@ if(close != null){
 
 const index1 = document.querySelector('.one');
 const index2 = document.querySelector('.two');
-const submit = document.querySelector('.button');
-const grid = document.querySelector('.grid');
+const index3 = document.querySelector('.three');
+const index4 = document.querySelector('.four')
+const index5 = document.querySelector('.five');
 
 
-if(index1 != null && index2 != null){
-  elements = [index1, index2]
-  text = [index1.querySelector('p').textContent, index2.querySelector('p').textContent];
-}
+const submit = document.querySelector('.submit');
+const nameErr = document.querySelector('.op');
+
 let elementQ = new Queue();
-let wordQ = new Queue();
+
+if(index1 != null && index2 != null && index3 != null){
+  elements = [index1, index2, index3]
+}
+
 
 for (let i = 0; i < elements.length; i++) {
   elementQ.enqueue(elements[i]);
-  wordQ.enqueue(text[i]);
 }
-console.log(wordQ)
 
-function printChar(word, element) {
-  if(word == undefined || element == undefined) return
-  element.style.display = "grid"
+function printChar(element) {
+  if(element == undefined) return // checking if queue is empty
+
+  element.style.display = "grid" // displays element
+
   let i = 0;
+  var word = element.querySelector('p').innerText
+
   element.querySelector('p').textContent  = "";
+
   let id = setInterval(() => {
     if (i >= word.length) {
       clearInterval(id)
@@ -94,5 +103,52 @@ function printChar(word, element) {
   }, 100);
 }
 
-printChar(wordQ.dequeue(), elementQ.dequeue())
+function nontext(element) {
+  var op = 0.1;  // initial opacity
+  element.style.display = 'grid';
 
+  var timer = setInterval(function () {
+      if (op >= 1){
+          clearInterval(timer);
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op += op * 0.1;
+  }, 10);
+  if(!elementQ.isEmpty){
+    appear(elementQ.dequeue())
+  }
+}
+
+function appear(element){
+  if(element.querySelector('p') == null){
+    nontext(element)
+  }else{
+    printChar(element)
+  }
+
+}
+
+// https://www.w3schools.com/js/js_validation.asp
+
+function validateName() {
+  let name = document.forms["Form"]["name"].value;
+  if (name == "") {
+    nameErr.style.display = "grid"
+  }else{
+    if(nameErr.style.display != "none"){
+      nameErr.style.display = 'none'
+    }
+    document.getElementById('name').readOnly = true;
+    submit.style.display ='none';
+
+
+
+    elementQ.enqueue(index4);
+    elementQ.enqueue(index5);
+    appear(elementQ.dequeue())
+  }
+}
+console.log(elementQ.length)
+
+appear(elementQ.dequeue())

@@ -1,7 +1,10 @@
-.text {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: 0.25fr 2fr;
+.arrow-break {
+  padding-top: 1rem;
+  visibility: hidden;
+}
+
+.buttons {
+  padding-bottom: 1rem;
 }
 
 .container {
@@ -22,10 +25,27 @@
   outline: none;
 }
 
-.two {
+.text {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 0.25fr 2fr;
+}
+
+.op {
+  display: none;
+}
+.two,
+.four,
+.five {
   display: none;
 }
 
+.three,
+.five {
+  opacity: 0;
+}
+
 .three {
-  display: none;
+  padding-bottom: 1rem;
+  display: grid;
 }
