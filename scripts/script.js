@@ -24,19 +24,6 @@ class Queue {
     return this.length === 0;
   }
 }
-const img = document.getElementById("me");
-const about_project = document.getElementById("about_project");
-
-if(about_project != null){
-  about_project.onclick = function () {
-    let src = img.getAttribute("src");
-    if (src === "../assets/about img.jpg") {
-      img.setAttribute("src", "../assets/craft.jpg");
-    } else {
-      img.setAttribute("src", "../assets/about img.jpg");
-    }
-  };
-}
 
 /*
 The following code was adapted from 
@@ -75,17 +62,13 @@ const submit = document.querySelector('.submit');
 const nameErr = document.querySelector('.op');
 
 let elementQ = new Queue();
-
-if(index1 != null && index2 != null && index3 != null){
-  elements = [index1, index2, index3]
-}
-
+elements = [index1, index2, index3]
 
 for (let i = 0; i < elements.length; i++) {
   elementQ.enqueue(elements[i]);
 }
 
-function printChar(element) {
+ function printChar(element) {
   if(element == undefined) return // checking if queue is empty
 
   element.style.display = "grid" // displays element
@@ -131,10 +114,7 @@ function appear(element){
   }else{
     printChar(element)
   }
-
 }
-
-// https://www.w3schools.com/js/js_validation.asp
 
 function validateName() {
   let name = document.forms["Form"]["name"].value;
@@ -146,6 +126,12 @@ function validateName() {
     }
     document.getElementById('name').readOnly = true;
     submit.style.display ='none';
+
+    index1.classList.add('fade-out');
+    index2.classList.add('fade-out');
+    index1.addEventListener('animationend', ()=>{index1.style.display = "none"},{once: true})
+    index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
+
     const element = document.getElementById("include-name");
     element.innerHTML = element.innerHTML.replace("var", name);
     

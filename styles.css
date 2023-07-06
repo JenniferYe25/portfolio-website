@@ -128,6 +128,58 @@ p {
   align-items: center;
 }
 
+.fade-out {
+  animation: fadeOut forwards 0.5s;
+  -webkit-animation: fadeOut forwards 0.5s;
+  -moz-animation: fadeOut forwards 0.5s;
+  -o-animation: fadeOut forwards 0.5s;
+  -ms-animation: fadeOut forwards 0.5s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .menu {
     font-size: 30px;
@@ -182,10 +234,10 @@ p {
 
   .hide-active {
     left: -100%;
-    transition: opacity 0.5s ease-out-in;
+    transition: opacity 0.5s forwards-out-in;
   }
 
   .overlay-active {
-    transition: left 0.5s ease-in-out;
+    transition: left 0.5s forwards-in-out;
   }
 }
