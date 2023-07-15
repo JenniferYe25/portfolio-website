@@ -122,6 +122,7 @@ p {
 
 .semi_v_nav {
   margin-left: 3rem;
+  margin-right: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -177,6 +178,58 @@ p {
   }
   100% {
     opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn forwards 1.5s;
+  -webkit-animation: fadeIn forwards 1.5s;
+  -moz-animation: fadeIn forwards 1.5s;
+  -o-animation: fadeIn forwards 1.5s;
+  -ms-animation: fadeIn forwards 1.5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
