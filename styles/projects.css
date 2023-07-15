@@ -115,7 +115,8 @@ h2 {
 .app_content,
 .other_content,
 .app_title,
-.other_title {
+.other_title,
+.select_card {
   display: none;
 }
 

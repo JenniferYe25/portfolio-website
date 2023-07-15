@@ -10,7 +10,6 @@ function showContent(index){
     yearContent.forEach(element => {
         element.style.display = 'none';
     });
-    // yearContent[index].style.visibility = "hidden"
     yearContent[index].style.display = 'block'
     yearContent[index].classList.add('fade-in');
 }
