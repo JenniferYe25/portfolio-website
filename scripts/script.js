@@ -57,12 +57,13 @@ const index3 = document.querySelector('.three');
 const index4 = document.querySelector('.four')
 const index5 = document.querySelector('.five');
 
-
 const submit = document.querySelector('.submit');
 const nameErr = document.querySelector('.op');
 
 let elementQ = new Queue();
 elements = [index1, index2, index3]
+
+var username = ""
 
 for (let i = 0; i < elements.length; i++) {
   elementQ.enqueue(elements[i]);
@@ -117,8 +118,8 @@ function appear(element){
 }
 
 function validateName() {
-  let name = document.forms["Form"]["name"].value;
-  if (name == "") {
+  username = document.forms["Form"]["name"].value;
+  if (username == "") {
     nameErr.style.display = "grid"
   }else{
     if(nameErr.style.display != "none"){
@@ -133,7 +134,7 @@ function validateName() {
     index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
 
     const element = document.getElementById("include-name");
-    element.innerHTML = element.innerHTML.replace("var", name);
+    element.innerHTML = element.innerHTML.replace("var", username);
     
     elementQ.enqueue(index4);
     elementQ.enqueue(index5);

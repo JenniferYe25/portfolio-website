@@ -40,8 +40,11 @@
   display: none;
 }
 .two,
+.three1,
 .four,
-.five {
+.five,
+.five1,
+.end {
   display: none;
 }
 
@@ -52,5 +55,6 @@
 
 .three {
   padding-bottom: 1rem;
+  padding-top: 1rem;
   display: grid;
 }
