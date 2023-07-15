@@ -38,7 +38,6 @@ h1 {
 
 p {
   font-size: 1.5rem;
-  margin-top: 0;
 }
 
 .arrow {
@@ -107,7 +106,9 @@ p {
 }
 
 .text {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-auto-flow: column;
   grid-template-columns: 0.25fr 2fr;
 }

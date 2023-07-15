@@ -19,35 +19,57 @@
     </div>
     <div class="container">
       <div class="grid">
-        <div class="text">
+        <div class="text one">
+          <img src="../assets/arrow.png" alt="right arrow" />
+          <p>Here are some ways to get in touch!</p>
+        </div>
+        <div class="text two">
+          <button
+            type="button"
+            class="button clickable_text"
+            onclick="window.open('https://www.linkedin.com/in/jenniferye3/', '_blank')"
+          >
+            [ Linkedin ]
+          </button>
+          <button type="button" class="button clickable_text" onclick="email()">
+            [ Email ]
+          </button>
+          <button
+            type="button"
+            class="button clickable_text"
+            onclick="window.open('https://github.com/JenniferYe25', '_blank')"
+          >
+            [ GitHub ]
+          </button>
+        </div>
+        <div class="text five1">
           <img src="../assets/arrow.png" alt="right arrow" />
           <div>
-            <p>Here are some ways to get in touch!</p>
-            <button
-              type="button"
-              class="button clickable_text"
-              onclick="window.location.href='./coop-experience.html'"
-            >
-              [ Linkedin ]
-            </button>
-            <button
-              type="button"
-              class="button clickable_text"
-              onclick="window.location.href='./club-experience.html'"
-            >
-              [ Email ]
-            </button>
-            <button
-              type="button"
-              class="button clickable_text"
-              onclick="window.location.href='./coop-experience.html'"
-            >
-              [ GitHub ]
-            </button>
+            <p style="white-space: pre-line" id="include-name">
+              My email is yej52@mcmaster.ca <br />
+              Looking forward to hearing from you!
+            </p>
           </div>
+        </div>
+        <div class="text three1">
+          <img src="../assets/arrow.png" alt="right arrow" />
+          <div>
+            <p style="white-space: pre-line" id="include-name">
+              Hate to see you go :( <br />
+              Hope you'll visit again next time!
+            </p>
+          </div>
+        </div>
+        <div class="text four">
+          <img src="../assets/arrow.png" alt="right arrow" />
+          <p>See Ya!</p>
         </div>
       </div>
     </div>
-    <div class="nav"></div>
+    <nav class="nav end">
+      <a onclick="finish()">[ End ]</a>
+    </nav>
+
+    <script src="../scripts/contact.js"></script>
   </body>
 </html>
