@@ -16,10 +16,6 @@ ul {
   padding-inline-start: 0;
 }
 
-.content {
-  padding-bottom: 5rem;
-}
-
 .exp_content {
   display: flex;
   flex-direction: column;
@@ -71,6 +67,18 @@ ul {
   font-family: epilogue-bold;
 }
 .year:hover {
+  color: #bfd4db;
+}
+
+.y2020,
+.y2021,
+.y2022,
+.y2023 {
+  display: none;
+}
+
+.c2021,
+.s2019 {
   color: #bfd4db;
 }
 

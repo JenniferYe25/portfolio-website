@@ -19,9 +19,16 @@
     <div class="content">
       <div class="semi_v_nav">
         <hr width="1" class="line_seperate_v_less" />
-        <p class="year" onclick="">2021</p>
+        <button
+          class="year clickable_text c2021 button"
+          onclick="showContent(0)"
+        >
+          2021
+        </button>
         <hr width="1" class="line_seperate_v_less" />
-        <p class="year" onclick="">2022</p>
+        <button class="year clickable_text button" onclick="showContent(1)">
+          2022
+        </button>
         <hr width="1" class="line_seperate_v_less" />
       </div>
       <div class="exp_content">
@@ -30,7 +37,34 @@
             <img src="../assets/temp.jpg" alt="club logo" />
           </div>
           <div class="title">
-            <h2>Club Title</h2>
+            <h2>Club Title 2021</h2>
+            <h3>Club Name @ Location</h3>
+          </div>
+        </div>
+        <div class="job_des">
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+            <li>Aliquam tincidunt mauris eu risus.</li>
+            <li>Vestibulum auctor dapibus neque.</li>
+            <li>Nunc dignissim risus id metus.</li>
+            <li>Cras ornare tristique elit.</li>
+            <li>Vivamus vestibulum ntulla nec ante.</li>
+          </ul>
+        </div>
+        <div class="skills">
+          <p>Skills</p>
+          <p>Skills</p>
+          <p>Skills</p>
+          <p>Skills</p>
+        </div>
+      </div>
+      <div class="exp_content y2022">
+        <div class="job_main">
+          <div class="logo">
+            <img src="../assets/temp.jpg" alt="club logo" />
+          </div>
+          <div class="title">
+            <h2>Club Title 2022</h2>
             <h3>Club Name @ Location</h3>
           </div>
         </div>
@@ -54,7 +88,7 @@
     </div>
     <nav class="nav">
       <a href="./about-me.html">[ About Me ]</a>
-      <a href="./experience-selection.html"  class="selected">[ Experience ]</a>
+      <a href="./experience-selection.html" class="selected">[ Experience ]</a>
       <a href="./projects.html">[ Projects ]</a>
       <a href="">[ Contact ] </a>
       <a href="./fun-fact.html">[ Fun Fact ]</a>
@@ -71,6 +105,6 @@
       <a href="./fun-fact.html">[ Fun Fact ]</a>
     </div>
 
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/year-select.js"></script>
   </body>
 </html>
