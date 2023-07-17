@@ -1,116 +1,117 @@
+// Standard queue implementation 
 class Queue {
-    constructor() {
-      this.elements = {};
-      this.head = 0;
-      this.tail = 0;
-    }
-    enqueue(element) {
-      this.elements[this.tail] = element;
-      this.tail++;
-    }
-    dequeue() {
-      const item = this.elements[this.head];
-      delete this.elements[this.head];
-      this.head++;
-      return item;
-    }
-    peek() {
-      return this.elements[this.head];
-    }
-    get length() {
-      return this.tail - this.head;
-    }
-    get isEmpty() {
-      return this.length === 0;
-    }
+  constructor() {
+    this.elements = {};
+    this.head = 0;
+    this.tail = 0;
   }
+  enqueue(element) {
+    this.elements[this.tail] = element;
+    this.tail++;
+  }
+  dequeue() {
+    const item = this.elements[this.head];
+    delete this.elements[this.head];
+    this.head++;
+    return item;
+  }
+  peek() {
+    return this.elements[this.head];
+  }
+  get length() {
+    return this.tail - this.head;
+  }
+  get isEmpty() {
+    return this.length === 0;
+  }
+}
 
-const index1 = document.querySelector('.one');
-const index2 = document.querySelector('.two');
-const index3 = document.querySelector('.three1');
-const index4 = document.querySelector('.four')
-const index5 = document.querySelector('.five1')
-
-
+// getting all elements needed
 const end = document.querySelector('.end');
-
 let elementQ = new Queue();
-elements = [index1, index2, end]
+[elementQ.enqueue(document.querySelector('.one')),
+ elementQ.enqueue(document.querySelector('.two')),
+ elementQ.enqueue(end)
+];
 
-for (let i = 0; i < elements.length; i++) {
-    elementQ.enqueue(elements[i]);
-  }
-
+// typing animation 
 function printChar(element) {
-    if(element == undefined) return // checking if queue is empty
-  
-    element.style.display = "grid" // displays element
-  
-    let i = 0;
-    var word = element.querySelector('p').innerText
-  
-    element.querySelector('p').textContent  = "";
-  
-    let id = setInterval(() => {
-      if (i >= word.length) {
-        clearInterval(id)
-        if(!elementQ.isEmpty){
-          appear(elementQ.dequeue())
-        }
-      }else{
-        element.querySelector('p').textContent += word[i];
-        i++;
+  const paragraph = element.querySelector('p');
+  if (!paragraph) return; // checking if queue is empty
+
+  element.style.display = "grid"; // displays element
+
+  let i = 0;
+  const word = paragraph.innerText;
+  paragraph.textContent = "";
+
+  const id = setInterval(() => {
+    if (i >= word.length) {
+      clearInterval(id);
+      if (!elementQ.isEmpty) { // current element has finished typing, go next
+        appear(elementQ.dequeue());
       }
-    }, 100);
+    } else {
+      paragraph.textContent += word[i];
+      i++;
+    }
+  }, 100);
 }
-  
+
+// fade in  function 
 function nontext(element) {
-    var op = 0.1;  // initial opacity
-    element.style.display = 'flex';
+  element.style.display = 'flex';
+  let op = 0.1; // initial opacity
 
-    var timer = setInterval(function () {
-        if (op >= 1){
-            clearInterval(timer);
-            if(!elementQ.isEmpty){
-                appear(elementQ.dequeue())
-              }
-        }
-        element.style.opacity = op;
-        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-        op += op * 0.1;
-    }, 10);
-    if(!elementQ.isEmpty){
-        appear(elementQ.dequeue())
+  const timer = setInterval(() => {
+    if (op >= 1) {
+      clearInterval(timer);
+      if (!elementQ.isEmpty) {
+        appear(elementQ.dequeue());
+      }
     }
-}
-  
-function appear(element){
-    if(element.querySelector('p') == null){
-        nontext(element)
-    }else{
-        printChar(element)
-    }
+    // fading
+    element.style.opacity = op;
+    element.style.filter = `alpha(opacity=${op * 100})`;
+    op += op * 0.1;
+  }, 10);
 }
 
-function finish(){
-        index1.classList.add('fade-out');
-        index2.classList.add('fade-out');
-        index5.classList.add('fade-out');
-        index1.addEventListener('animationend', ()=>{index1.style.display = "none"},{once: true})
-        index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
-        index5.addEventListener('animationend', ()=>{index5.style.display = "none"},{once: true})
-    
-        elementQ.enqueue(index3)
-        elementQ.enqueue(index4)
-
-        appear(elementQ.dequeue())
-
-        end.style.display = 'none'
+// decision making function for display style
+function appear(element) {
+  const paragraph = element.querySelector('p');
+  if (!paragraph) {
+    nontext(element);
+  } else {
+    printChar(element);
+  }
 }
 
-function email(){
-    elementQ.enqueue(index5)
-    appear(elementQ.dequeue())
+// end button clicked and end website exp
+function finish() {
+  // get rid of all past elements that aren't ending text
+  [document.querySelector('.one'),
+   document.querySelector('.two'),
+   document.querySelector('.five1')
+  ].forEach(element => {
+    element.classList.add('fade-out');
+    element.addEventListener('animationend', () => {
+      element.style.display = "none";
+    }, { once: true });
+  });
+
+  [document.querySelector('.three1'),
+   document.querySelector('.four')
+  ].forEach(element => elementQ.enqueue(element));
+
+  appear(elementQ.dequeue());
+  end.style.display = 'none'; // remove end button 
 }
 
-appear(elementQ.dequeue())
+// displays email 
+function email() {
+  elementQ.enqueue(document.querySelector('.five1'));
+  appear(elementQ.dequeue());
+}
+
+appear(elementQ.dequeue());

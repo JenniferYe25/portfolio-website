@@ -1,25 +1,31 @@
-var titles = document.querySelectorAll('.titles .title')
-var tabs = document.querySelectorAll('.semi_v_nav button')
-var contents = document.querySelectorAll('.inner_most_content')
+// get all eleemnts needed
+const titles = document.querySelectorAll('.titles .title')
+const tabs = document.querySelectorAll('.semi_v_nav button')
+const contents = document.querySelectorAll('.inner_most_content')
 
-var web_card = document.querySelectorAll('.web')
-var app_card = document.querySelectorAll('.app')
-var other_card = document.querySelectorAll('.other')
-var cards = [web_card, app_card, other_card]
+const web_card = document.querySelectorAll('.web')
+const app_card = document.querySelectorAll('.app')
+const other_card = document.querySelectorAll('.other')
+const cards = [web_card, app_card, other_card]
 
-var names = document.querySelectorAll('.bar_list h3')
+const names = document.querySelectorAll('.bar_list h3')
 
+// shows right most content
 function showContent(index){
-    tabs.forEach(element => {
+    tabs.forEach(element => { // ensure all tabs are reset
         element.style.opacity = 1
     })
-    tabs[index].style.opacity = 0.5;
+    tabs[index].style.opacity = 0.5; // select indicator on tab clicked
+
+    // reset all styling on type of project title and title names
     titles.forEach(element => {
         element.style.display = 'none';
     });
     contents.forEach(element => {
         element.style.display = 'none';
     });
+
+    // ensure if on mobile, display mobile view
     if(window.innerWidth > 700){
         printChar(titles[index])
         contents[index].style.display = 'flex'
@@ -28,11 +34,9 @@ function showContent(index){
         printChar(titles[index])
         contents[index].style.display = 'block'
     }
-    names[0].style.outline = "2px solid black"
-    names[3].style.outline = "2px solid black"
-    names[6].style.outline = "2px solid black"
 }
 
+// typing animation 
 function printChar(element) {
     element.style.display = "flex" // displays element
   
@@ -50,16 +54,20 @@ function printChar(element) {
     }, 100);
   }
 
+// show project detail cards
 function showCards(index, card, project){
+    // removes selected indicator for project titles
     names.forEach(element => {
         element.style.outline = "";
     })
-    names[index].style.outline = "2px solid black"
+    names[index].style.outline = "2px solid black" // add select indicator for project clicked
 
+    // remvoe all cards from display
     cards[card].forEach(element => {
         element.style.display = 'none';
     })
-    names[index].style.outline = '2 solid black';
+
+    // display detail card of the project clicked
     cards[card][project].style.display = 'block'
     cards[card][project].classList.add('fade-in');
 

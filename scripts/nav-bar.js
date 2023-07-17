@@ -1,8 +1,3 @@
-/*
-The following code was adapted from 
-https://www.javascriptfreecode.com/Side_Navigation_with_Overlay_Effect.htm
-Modifications were made to fit the use of the website
-*/
 const navBtn = document.querySelector('.menu');
 const nav = document.querySelector('.nav-m');
 const close = document.querySelector('.closebtn');
