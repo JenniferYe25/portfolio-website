@@ -25,32 +25,7 @@ class Queue {
   }
 }
 
-/*
-The following code was adapted from 
-https://www.javascriptfreecode.com/Side_Navigation_with_Overlay_Effect.htm
-Modifications were made to fit the use of the website
-*/
-const navBtn = document.querySelector('.menu');
-const nav = document.querySelector('.nav-m');
-const close = document.querySelector('.closebtn');
-
-if(navBtn != null){
-  navBtn.addEventListener('click', function(){
-    nav.classList.remove("hide-active");
-    nav.style.visibility = "visible";
-    nav.classList.toggle("overlay-active");
-  })
-}
-
-if(close != null){
-  close.addEventListener('click', function(){
-    nav.classList.add("hide-active");
-    nav.classList.remove("overlay-active");
-   
-
-  })
-}
-
+// get all elements needed
 const index1 = document.querySelector('.one');
 const index2 = document.querySelector('.two');
 const index3 = document.querySelector('.three');
@@ -59,6 +34,7 @@ const index5 = document.querySelector('.five');
 
 const submit = document.querySelector('.submit');
 const nameErr = document.querySelector('.op');
+var form=document.getElementById("Form");
 
 let elementQ = new Queue();
 elements = [index1, index2, index3]
@@ -69,6 +45,11 @@ for (let i = 0; i < elements.length; i++) {
   elementQ.enqueue(elements[i]);
 }
 
+/*
+The following function was adapted from 
+https://www.javascriptfreecode.com/Typing_Text_Effect.htm
+Modifications were made to fit the use of the website
+*/
  function printChar(element) {
   if(element == undefined) return // checking if queue is empty
 
@@ -92,6 +73,7 @@ for (let i = 0; i < elements.length; i++) {
   }, 100);
 }
 
+// fade in animation 
 function nontext(element) {
   var op = 0.1;  // initial opacity
   element.style.display = 'grid';
@@ -109,6 +91,7 @@ function nontext(element) {
   }
 }
 
+// decision making for appear animation 
 function appear(element){
   if(element.querySelector('p') == null){
     nontext(element)
@@ -118,21 +101,27 @@ function appear(element){
 }
 
 function validateName() {
+  event.preventDefault();
+
   username = document.forms["Form"]["name"].value;
-  if (username == "") {
-    nameErr.style.display = "grid"
+  if (username == "") { // if user entered nothing
+    nameErr.style.display = "grid" // display error message
   }else{
+    // remove any error messages shown 
     if(nameErr.style.display != "none"){
       nameErr.style.display = 'none'
     }
+    // make feild not editable 
     document.getElementById('name').readOnly = true;
-    submit.style.display ='none';
+    submit.style.display ='none'; // remove submit button 
 
+    // add fade out animation and remove elements
     index1.classList.add('fade-out');
     index2.classList.add('fade-out');
     index1.addEventListener('animationend', ()=>{index1.style.display = "none"},{once: true})
     index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
 
+    // replace text with user's name
     const element = document.getElementById("include-name");
     element.innerHTML = element.innerHTML.replace("var", username);
     
@@ -141,5 +130,9 @@ function validateName() {
     appear(elementQ.dequeue())
   }
 }
+
+//Calling a function during form submission.
+form.addEventListener('submit', validateName);
+form.addEventListener('click', validateName);
 
 appear(elementQ.dequeue())
