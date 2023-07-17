@@ -107,7 +107,6 @@ p {
 
 .text {
   display: flex;
-  justify-content: center;
   align-items: center;
   grid-auto-flow: column;
   grid-template-columns: 0.25fr 2fr;
