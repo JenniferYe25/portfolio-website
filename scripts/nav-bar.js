@@ -1,18 +1,18 @@
-const navBtn = document.querySelector('.menu');
-const nav = document.querySelector('.nav-m');
-const close = document.querySelector('.closebtn');
+const navBtn = $('.menu');
+const nav = $('.nav-m');
+const close = $('.closebtn');
 
-if (navBtn) { // if element exists
-  navBtn.addEventListener('click', function() {
-    nav.classList.toggle("overlay-active");
-    nav.classList.remove("hide-active");
-    nav.style.visibility = "visible";
+if (navBtn.length) { // if element exists
+  navBtn.on('click', function() {
+    nav.toggleClass('overlay-active');
+    nav.removeClass('hide-active');
+    nav.css('visibility', 'visible');
   });
 }
 
-if (close) { // if element exists
-  close.addEventListener('click', function() {
-    nav.classList.remove("overlay-active");
-    nav.classList.add("hide-active");
+if (close.length) { // if element exists
+  close.on('click', function() {
+    nav.removeClass('overlay-active');
+    nav.addClass('hide-active');
   });
 }

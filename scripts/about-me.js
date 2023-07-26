@@ -1,10 +1,12 @@
-const img = document.getElementById("me");
-const about_project = document.getElementById("about_project");
+$(document).ready(function() {
+  const aboutProject = $("#about_project");
+  const img = $("#img");
 
-if (about_project) { // if element exists
-  about_project.addEventListener("click", function () { //if clicked change image
-    const src = img.getAttribute("src");
-    const newSrc = src === "../assets/me.jpg" ? "../assets/craft.jpg" : "../assets/me.jpg";
-    img.setAttribute("src", newSrc);
-  });
-}
+  if (aboutProject.length) {
+    aboutProject.click(function() {
+      const src = img.attr("src");
+      const newSrc = src === "../assets/me.jpg" ? "../assets/craft.jpg" : "../assets/me.jpg";
+      img.attr("src", newSrc);
+    });
+  }
+});
