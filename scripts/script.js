@@ -1,3 +1,4 @@
+// jQuery version of Queue class
 class Queue {
   constructor() {
     this.elements = {};
@@ -25,134 +26,141 @@ class Queue {
   }
 }
 
-// get all elements needed
-const index1 = document.querySelector('.one');
-const index2 = document.querySelector('.two');
-const index3 = document.querySelector('.three');
-const hello = document.querySelector('.gif');
-const index4 = document.querySelector('.four')
-const index5 = document.querySelector('.five');
+// jQuery version of getting all elements needed
+const index1 = $('.one');
+const index2 = $('.two');
+const index3 = $('.three');
+const hello = $('.gif');
+const index4 = $('.four');
+const index5 = $('.five');
 
-const submit = document.querySelector('.submit');
-const nameErr = document.querySelector('.op');
-var form=document.getElementById("Form");
+const submit = $('.submit');
+const nameErr = $('.op');
+const form = $('#Form');
 
 let elementQ = new Queue();
 elements = [index1, hello, index2, index3]
 
-var username = ""
+let username = "";
 
-for (let i = 0; i < elements.length; i++) {
-  elementQ.enqueue(elements[i]);
-}
+elements.forEach(function (element) {
+  elementQ.enqueue(element);
+});
 
-/*
-The following function was adapted from 
-https://www.javascriptfreecode.com/Typing_Text_Effect.htm
-Modifications were made to fit the use of the website
-*/
- function printChar(element) {
-  if(element == undefined) return // checking if queue is empty
+// jQuery version of printChar function
+function printChar(element) {
+  const paragraph = element.find('p');
+  if (!paragraph.length) return; // checking if queue is empty
 
-  element.style.display = "grid" // displays element
+  element.css('display', 'grid'); // displays element
 
   let i = 0;
-  var word = element.querySelector('p').innerText
+  const word = paragraph.text();
+  paragraph.text('');
 
-  element.querySelector('p').textContent  = "";
-
-  let id = setInterval(() => {
+  const id = setInterval(function () {
     if (i >= word.length) {
-      clearInterval(id)
-      if(!elementQ.isEmpty){
-        appear(elementQ.dequeue())
+      clearInterval(id);
+      if (!elementQ.isEmpty) {
+        appear(elementQ.dequeue());
       }
-    }else{
-      element.querySelector('p').textContent += word[i];
+    } else {
+      paragraph.text(paragraph.text() + word[i]);
       i++;
     }
   }, 100);
 }
 
-// fade in animation 
+// jQuery version of nontext function
 function nontext(element) {
-  var op = 0.1;  // initial opacity
-  element.style.display = 'grid';
+  element.css('display', 'grid');
+  let op = 0.1; // initial opacity
 
-  var timer = setInterval(function () {
-      if (op >= 1){
-          clearInterval(timer);
-      }
-      element.style.opacity = op;
-      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-      op += op * 0.1;
+  const timer = setInterval(function () {
+    if (op >= 1) {
+      clearInterval(timer);
+    }
+    element.css('opacity', op);
+    element.css('filter', `alpha(opacity=${op * 100})`);
+    op += op * 0.1;
   }, 10);
-  if(!elementQ.isEmpty){
-    appear(elementQ.dequeue())
+
+  if (!elementQ.isEmpty) {
+    appear(elementQ.dequeue());
   }
 }
 
-// decision making for appear animation 
-function appear(element){
-  if(element.querySelector('p') == null){
-    nontext(element)
-  }else{
-    printChar(element)
+// jQuery version of appear function
+function appear(element) {
+  if (!element.find('p').length) {
+    // if has something to type out
+    nontext(element);
+  } else {
+    printChar(element);
   }
 }
 
-function validateName() {
+// jQuery version of validateName function
+function validateName(event) {
   event.preventDefault();
 
-  username = document.forms["Form"]["name"].value;
-  if (username == "") { // if user entered nothing
-    nameErr.style.display = "grid" // display error message
-  }else{
-    // remove any error messages shown 
-    if(nameErr.style.display != "none"){
-      nameErr.style.display = 'none'
+  username = form.find("[name='name']").val();
+  if (!username) {
+    // if user entered nothing
+    nameErr.css('display', 'grid'); // display error message
+  } else {
+    // remove any error messages shown
+    if (nameErr.css('display') !== 'none') {
+      nameErr.css('display', 'none');
     }
-    // make feild not editable 
-    document.getElementById('name').readOnly = true;
-    submit.style.display ='none'; // remove submit button 
+    // make field not editable
+    form.find('#name').prop('readonly', true);
+    submit.css('display', 'none'); // remove submit button
 
     // add fade out animation and remove elements
-    index1.classList.add('fade-out');
-    index2.classList.add('fade-out');
-    hello.classList.add('fade-out');
-    index1.addEventListener('animationend', ()=>{index1.style.display = "none"},{once: true})
-    index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
-    hello.addEventListener('animationend', ()=>{hello.style.display = "none"},{once: true})
+    index1.addClass('fade-out');
+    index2.addClass('fade-out');
+    hello.addClass('fade-out');
+    index1.on('animationend', function () {
+      index1.css('display', 'none');
+    });
+    index2.on('animationend', function () {
+      index2.css('display', 'none');
+    });
+    hello.on('animationend', function () {
+      hello.css('display', 'none');
+    });
 
     // replace text with user's name
-    const element = document.getElementById("include-name");
-    element.innerHTML = element.innerHTML.replace("var", username);
-    
+    const $element = $('#include-name');
+    $element.html($element.html().replace('var', username));
+
     elementQ.enqueue(index4);
     elementQ.enqueue(index5);
-    appear(elementQ.dequeue())
+    appear(elementQ.dequeue());
   }
 }
 
-//Calling a function during form submission.
-form.addEventListener('submit', validateName);
-form.addEventListener('click', validateName);
+// Calling a function during form submission.
+form.on('submit click', validateName);
 
 appear(elementQ.dequeue())
 
 const apiKey = 'medbyVVK7sVOtk26U1IhbS96DOiYaerM';
 
-function fetchRandomGIF(tag) {
-  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=g`;
+      function fetchRandomGIF(tag) {
+        const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=g`;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const gifUrl = data.data.images.original.url;
-      const gifContainer = document.getElementById('gifContainer');
-      gifContainer.innerHTML = `<img src="${gifUrl}" alt="${tag} GIF" style='width:15rem'>`;
-    })
-    .catch(error => {
-      console.error('Error fetching random GIF:', error);
-    });
-}
+        $.ajax({
+          url: url,
+          method: 'GET',
+          dataType: 'json'
+        })
+        .done(function(data) {
+          const gifUrl = data.data.images.original.url;
+          const gifContainer = $('#gifContainer');
+          gifContainer.html(`<img src="${gifUrl}" alt="${tag} GIF" style="width:15rem">`);
+        })
+        .fail(function(error) {
+          console.error('Error fetching random GIF:', error);
+        })};

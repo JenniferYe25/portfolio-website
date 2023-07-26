@@ -1,4 +1,4 @@
-// Standard queue implementation 
+// Standard queue implementation
 class Queue {
   constructor() {
     this.elements = {};
@@ -26,25 +26,22 @@ class Queue {
   }
 }
 
-// get all elements needed for animation 
-const index1 = document.querySelector('.one');
-const index2 = document.querySelector('.two');
-
+// get all elements needed for animation
 let elementQ = new Queue();
-[elementQ.enqueue(index1), elementQ.enqueue(index2)];
+[elementQ.enqueue($('.one')[0]), elementQ.enqueue( $('.two')[0])];
 
 appear(elementQ.dequeue());
 
 // typing animation
 function printChar(element) {
-  const paragraph = element.querySelector('p');
-  if (!paragraph) return; // checking if queue is empty
+  const paragraph = $(element).find('p');
+  if (!paragraph.length) return; // checking if queue is empty
 
-  element.style.display = "grid"; // displays element
+  $(element).css('display', 'grid'); // displays element
 
   let i = 0;
-  const word = paragraph.innerText;
-  paragraph.textContent = "";
+  const word = paragraph.text();
+  paragraph.text('');
 
   const id = setInterval(() => {
     if (i >= word.length) {
@@ -53,23 +50,23 @@ function printChar(element) {
         appear(elementQ.dequeue());
       }
     } else {
-      paragraph.textContent += word[i];
+      paragraph.text(paragraph.text() + word[i]);
       i++;
     }
   }, 100);
 }
 
-// fade in an8imation 
+// fade in animation
 function nontext(element) {
-  element.style.display = 'grid';
+  $(element).css('display', 'grid');
   let op = 0.1; // initial opacity
 
   const timer = setInterval(() => {
     if (op >= 1) {
       clearInterval(timer);
     }
-    element.style.opacity = op;
-    element.style.filter = `alpha(opacity=${op * 100})`;
+    $(element).css('opacity', op);
+    $(element).css('filter', `alpha(opacity=${op * 100})`);
     op += op * 0.1;
   }, 10);
 
@@ -78,11 +75,12 @@ function nontext(element) {
   }
 }
 
-// decision making function 
-  function appear(element){
-    if(element.querySelector('p') == null){ // if has something to type out
-      nontext(element)
-    } else {
-      printChar(element)
+// decision-making function
+function appear(element) {
+  if ($(element).find('p').length == 0) {
+    // if has something to type out
+    nontext(element);
+  } else {
+    printChar(element);
   }
 }
