@@ -106,6 +106,7 @@ h2 {
   align-items: center;
   color: #78a2cc;
   padding: 0 calc(36rem / 16);
+  font-size: 2rem;
 }
 
 .type :hover {

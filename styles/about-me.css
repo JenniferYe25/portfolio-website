@@ -8,7 +8,7 @@ ul {
 }
 
 .text {
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .text-last {
@@ -41,11 +41,11 @@ ul {
 }
 
 .title {
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .subtitle {
-  margin: 1rem;
+  margin: 2rem;
 }
 
 @media screen and (max-width: 700px) {

@@ -36,6 +36,10 @@
   grid-template-columns: 0.25fr 2fr;
 }
 
+.end {
+  cursor: pointer;
+}
+
 .op {
   display: none;
 }
