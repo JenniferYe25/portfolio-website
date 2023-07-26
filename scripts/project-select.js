@@ -10,8 +10,6 @@ const cards = [web_card, app_card, other_card];
 
 const names = $('.bar_list h3');
 
-printChar(titles[0]) //animation start 
-
 // shows rightmost content
 function showContent(index) {
     tabs.css('opacity', 1); // ensure all tabs are reset
