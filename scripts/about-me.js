@@ -1,10 +1,13 @@
-const img = document.getElementById("me");
-const about_project = document.getElementById("about_project");
+$(document).ready(function() {
+  $("#output").text("Hello, World!");
+  const img = $("#me");
+  const about_project = $("#about_project");
 
-if (about_project) { // if element exists
-  about_project.addEventListener("click", function () { //if clicked change image
-    const src = img.getAttribute("src");
-    const newSrc = src === "../assets/about img.jpg" ? "../assets/craft.jpg" : "../assets/about img.jpg";
-    img.setAttribute("src", newSrc);
-  });
-}
+  if (about_project.length) { // another way of saying found element
+    about_project.on("click", function() {
+      const src = img.attr("src");
+      const newSrc = src === "../assets/about img.jpg" ? "../assets/craft.jpg" : "../assets/about img.jpg";
+      img.attr("src", newSrc);
+    });
+  }
+});

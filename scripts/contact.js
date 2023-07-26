@@ -1,4 +1,4 @@
-// Standard queue implementation 
+// Standard queue implementation
 class Queue {
   constructor() {
     this.elements = {};
@@ -27,23 +27,23 @@ class Queue {
 }
 
 // getting all elements needed
-const end = document.querySelector('.end');
+const end = $('.end');
 let elementQ = new Queue();
-[elementQ.enqueue(document.querySelector('.one')),
- elementQ.enqueue(document.querySelector('.two')),
- elementQ.enqueue(end)
+[elementQ.enqueue($('.one')[0]),
+ elementQ.enqueue($('.two')[0]),
+ elementQ.enqueue(end[0])
 ];
 
-// typing animation 
+// typing animation
 function printChar(element) {
-  const paragraph = element.querySelector('p');
-  if (!paragraph) return; // checking if queue is empty
+  const paragraph = $(element).find('p');
+  if (!paragraph.length) return; // checking if queue is empty
 
-  element.style.display = "grid"; // displays element
+  $(element).css('display', 'grid'); // displays element
 
   let i = 0;
-  const word = paragraph.innerText;
-  paragraph.textContent = "";
+  const word = paragraph.text();
+  paragraph.text('');
 
   const id = setInterval(() => {
     if (i >= word.length) {
@@ -52,15 +52,15 @@ function printChar(element) {
         appear(elementQ.dequeue());
       }
     } else {
-      paragraph.textContent += word[i];
+      paragraph.text(paragraph.text() + word[i]); // add next letter
       i++;
     }
   }, 100);
 }
 
-// fade in  function 
+// fade in function
 function nontext(element) {
-  element.style.display = 'flex';
+  $(element).css('display', 'flex');
   let op = 0.1; // initial opacity
 
   const timer = setInterval(() => {
@@ -71,16 +71,18 @@ function nontext(element) {
       }
     }
     // fading
-    element.style.opacity = op;
-    element.style.filter = `alpha(opacity=${op * 100})`;
+    $(element).css({
+      'opacity': op,
+      'filter': `alpha(opacity=${op * 100})`
+    });
     op += op * 0.1;
   }, 10);
 }
 
-// decision making function for display style
+// decision-making function for display style
 function appear(element) {
-  const paragraph = element.querySelector('p');
-  if (!paragraph) {
+  const paragraph = $(element).find('p');
+  if (!paragraph.length) {
     nontext(element);
   } else {
     printChar(element);
@@ -90,27 +92,27 @@ function appear(element) {
 // end button clicked and end website exp
 function finish() {
   // get rid of all past elements that aren't ending text
-  [document.querySelector('.one'),
-   document.querySelector('.two'),
-   document.querySelector('.five1')
+  [$('.one'),
+   $('.two'),
+   $('.five1')
   ].forEach(element => {
-    element.classList.add('fade-out');
-    element.addEventListener('animationend', () => {
-      element.style.display = "none";
-    }, { once: true });
+    element.addClass('fade-out');
+    element.one('animationend', () => {
+      element.css('display', 'none');
+    });
   });
 
-  [document.querySelector('.three1'),
-   document.querySelector('.four')
-  ].forEach(element => elementQ.enqueue(element));
+  [$('.three1'),
+   $('.four')
+  ].forEach(element => elementQ.enqueue(element[0]));
 
   appear(elementQ.dequeue());
-  end.style.display = 'none'; // remove end button 
+  end.css('display', 'none'); // remove end button 
 }
 
-// displays email 
+// displays email
 function email() {
-  elementQ.enqueue(document.querySelector('.five1'));
+  elementQ.enqueue($('.five1')[0]);
   appear(elementQ.dequeue());
 }
 
