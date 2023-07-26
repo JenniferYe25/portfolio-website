@@ -10,6 +10,8 @@ const cards = [web_card, app_card, other_card]
 
 const names = document.querySelectorAll('.bar_list h3')
 
+printChar(titles[0]) //animation start 
+
 // shows right most content
 function showContent(index){
     tabs.forEach(element => { // ensure all tabs are reset
