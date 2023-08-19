@@ -7,7 +7,7 @@ h3 {
 }
 
 img {
-  width: 12rem;
+  width: 10rem;
   border-radius: 50%;
   margin-right: 3rem;
 }
@@ -73,12 +73,12 @@ ul {
 .y2020,
 .y2021,
 .y2022,
-.y2023 {
+.y2019 {
   display: none;
 }
 
 .c2021,
-.s2019 {
+.s2023 {
   color: #bfd4db;
 }
 

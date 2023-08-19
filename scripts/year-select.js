@@ -1,5 +1,7 @@
 var yearTab = document.querySelectorAll('.content .semi_v_nav button')
 var yearContent = document.querySelectorAll('.content .exp_content')
+console.log(yearContent)
+console.log(yearTab)
 
 function showContent(index){
     // resets colour to main colour
