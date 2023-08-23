@@ -16,6 +16,10 @@ ul {
   padding-inline-start: 0;
 }
 
+.semi_v_nav {
+  height: 80vh;
+}
+
 .exp_content {
   display: flex;
   flex-direction: column;
