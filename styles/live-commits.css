@@ -1,0 +1,29 @@
+table {
+  margin-bottom: 5rem;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  padding: 1rem;
+}
+
+th {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  color: #78a2cc;
+  padding: 0 calc(36rem / 16);
+  font-size: 2rem;
+}
