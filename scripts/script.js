@@ -29,6 +29,7 @@ class Queue {
 const index1 = document.querySelector('.one');
 const index2 = document.querySelector('.two');
 const index3 = document.querySelector('.three');
+const hello = document.querySelector('.gif');
 const index4 = document.querySelector('.four')
 const index5 = document.querySelector('.five');
 
@@ -37,7 +38,7 @@ const nameErr = document.querySelector('.op');
 var form=document.getElementById("Form");
 
 let elementQ = new Queue();
-elements = [index1, index2, index3]
+elements = [index1, hello, index2, index3]
 
 var username = ""
 
@@ -136,3 +137,20 @@ form.addEventListener('submit', validateName);
 form.addEventListener('click', validateName);
 
 appear(elementQ.dequeue())
+
+const apiKey = 'medbyVVK7sVOtk26U1IhbS96DOiYaerM';
+
+function fetchRandomGIF(tag) {
+  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=g`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const gifUrl = data.data.images.original.url;
+      const gifContainer = document.getElementById('gifContainer');
+      gifContainer.innerHTML = `<img src="${gifUrl}" alt="Random GIF" style='width:15rem'>`;
+    })
+    .catch(error => {
+      console.error('Error fetching random GIF:', error);
+    });
+}

@@ -101,7 +101,8 @@ function finish() {
   });
 
   [document.querySelector('.three1'),
-   document.querySelector('.four')
+   document.querySelector('.four'),
+   document.querySelector('.gif')
   ].forEach(element => elementQ.enqueue(element));
 
   appear(elementQ.dequeue());
@@ -115,3 +116,20 @@ function email() {
 }
 
 appear(elementQ.dequeue());
+
+const apiKey = 'medbyVVK7sVOtk26U1IhbS96DOiYaerM';
+
+function fetchRandomGIF(tag) {
+  const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=g`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const gifUrl = data.data.images.original.url;
+      const gifContainer = document.getElementById('gifContainer');
+      gifContainer.innerHTML = `<img src="${gifUrl}" alt="Random GIF" style='width:15rem'>`;
+    })
+    .catch(error => {
+      console.error('Error fetching random GIF:', error);
+    });
+}
