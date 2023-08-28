@@ -1,4 +1,3 @@
-$(document).ready(function() {
   // Standard queue implementation
   class Queue {
     constructor() {
@@ -132,4 +131,3 @@ $(document).ready(function() {
       console.error('Error fetching random GIF:', error);
     });
   }
-});
