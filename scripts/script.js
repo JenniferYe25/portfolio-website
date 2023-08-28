@@ -119,8 +119,10 @@ function validateName() {
     // add fade out animation and remove elements
     index1.classList.add('fade-out');
     index2.classList.add('fade-out');
+    hello.classList.add('fade-out');
     index1.addEventListener('animationend', ()=>{index1.style.display = "none"},{once: true})
     index2.addEventListener('animationend', ()=>{index2.style.display = "none"},{once: true})
+    hello.addEventListener('animationend', ()=>{hello.style.display = "none"},{once: true})
 
     // replace text with user's name
     const element = document.getElementById("include-name");
@@ -148,7 +150,7 @@ function fetchRandomGIF(tag) {
     .then(data => {
       const gifUrl = data.data.images.original.url;
       const gifContainer = document.getElementById('gifContainer');
-      gifContainer.innerHTML = `<img src="${gifUrl}" alt="Random GIF" style='width:15rem'>`;
+      gifContainer.innerHTML = `<img src="${gifUrl}" alt="${tag} GIF" style='width:15rem'>`;
     })
     .catch(error => {
       console.error('Error fetching random GIF:', error);
