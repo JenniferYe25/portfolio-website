@@ -1,6 +1,6 @@
 $(document).ready(function() {
+  const img = $("#me");
   const aboutProject = $("#about_project");
-  const img = $("#img");
 
   if (aboutProject.length) {
     aboutProject.click(function() {
