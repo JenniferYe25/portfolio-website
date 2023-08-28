@@ -16,6 +16,6 @@ function showContent(index){
         element.style.display = 'none';
     });
     // only display the one that matches the year clicked
-    yearContent[index].style.display = 'block'
+    yearContent[index].style.display = 'flex'
     yearContent[index].classList.add('fade-in');
 }
