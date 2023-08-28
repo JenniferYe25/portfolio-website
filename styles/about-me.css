@@ -7,10 +7,6 @@ ul {
   list-style-image: url(../assets/arrow.png);
 }
 
-.text {
-  margin-bottom: 1.5rem;
-}
-
 .text-last {
   display: grid;
   grid-auto-flow: column;
@@ -22,6 +18,7 @@ ul {
   display: flex;
   padding-bottom: 2rem;
   align-items: center;
+  justify-content: space-between;
 }
 .about_text {
   padding-left: 2rem;
@@ -30,13 +27,11 @@ ul {
 }
 .about_img_container {
   position: relative;
-  padding-left: 2rem;
   padding-right: 2rem;
-  padding-bottom: 2rem;
 }
 
 .about_img {
-  width: calc(380rem / 16);
+  width: calc(400rem / 16);
   border-radius: 16px;
 }
 
@@ -59,8 +54,5 @@ ul {
 
   .about_img {
     width: 75%;
-  }
-  .text {
-    margin-bottom: 1.5rem;
   }
 }
