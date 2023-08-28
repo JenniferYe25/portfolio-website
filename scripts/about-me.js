@@ -1,7 +1,6 @@
 $(document).ready(function() {
-  $("#output").text("Hello, World!");
   const img = $("#me");
-  const about_project = $("#about_project");
+  const aboutProject = $("#about_project");
 
   if (about_project.length) { // another way of saying found element
     about_project.on("click", function() {
