@@ -10,6 +10,20 @@ h2 {
   padding-right: 2rem;
 }
 
+.button {
+  color: var(--primary);
+  font-size: 1.5rem;
+  background-color: white;
+  border: solid;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.line_seperate_v {
+  border-left: 2px solid gray;
+  height: 10rem;
+}
+
 .temp {
   padding-bottom: 3rem;
 }
@@ -97,7 +111,7 @@ h2 {
   font-size: 1rem;
 }
 
-.semi_v_nav p {
+.semi_v_nav {
   font-size: 2rem;
   height: 80vh;
 }
@@ -122,15 +136,14 @@ h2 {
   display: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 930px) {
+  .inner_most_content {
+    flex-direction: column;
+  }
   .bar_list {
     display: block;
     width: auto;
     padding: 0;
-  }
-
-  .inner_most_content {
-    display: block;
   }
 
   .list_card {

@@ -233,7 +233,7 @@ p {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 930px) {
   .menu {
     font-size: 30px;
     cursor: pointer;

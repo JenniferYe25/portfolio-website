@@ -64,7 +64,7 @@ function showCards(index, card, project){
     })
     names[index].style.outline = "2px solid black" // add select indicator for project clicked
 
-    // remvoe all cards from display
+    // removes all cards from display
     cards[card].forEach(element => {
         element.style.display = 'none';
     })
