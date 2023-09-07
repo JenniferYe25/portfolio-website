@@ -26,24 +26,39 @@
     }
   }
 
-// getting all elements needed
-const end = $('.end');
-let elementQ = new Queue();
-[elementQ.enqueue($('.one')[0]),
- elementQ.enqueue($('.two')[0]),
- elementQ.enqueue(end[0])
-];
+  const end = $('.end');
+  let elementQ = new Queue();
+  [$('.one'), $('.two'), end].forEach(function(element) {
+    elementQ.enqueue(element[0]);
+  });
 
-// typing animation
-function printChar(element) {
-  const paragraph = $(element).find('p');
-  if (!paragraph.length) return; // checking if queue is empty
+  // typing animation
+  function printChar(element) {
+    const paragraph = $(element).find('p');
+    if (!paragraph.length) return;
 
-  $(element).css('display', 'grid'); // displays element
+    $(element).css('display', 'grid');
+    let i = 0;
+    const word = paragraph.text();
+    paragraph.text('');
 
-  let i = 0;
-  const word = paragraph.text();
-  paragraph.text('');
+    const id = setInterval(function() {
+      if (i >= word.length) {
+        clearInterval(id);
+        if (!elementQ.isEmpty) {
+          appear(elementQ.dequeue());
+        }
+      } else {
+        paragraph.text(paragraph.text() + word[i]);
+        i++;
+      }
+    }, 100);
+  }
+
+  // fade in function
+  function nontext(element) {
+    $(element).css('display', 'flex');
+    let op = 0.1;
 
     const timer = setInterval(function() {
       if (op >= 1) {
@@ -64,67 +79,43 @@ function printChar(element) {
     if (!paragraph.length) {
       nontext(element);
     } else {
-      paragraph.text(paragraph.text() + word[i]); // add next letter
-      i++;
+      printChar(element);
     }
   }
 
-// fade in function
-function nontext(element) {
-  $(element).css('display', 'flex');
-  let op = 0.1; // initial opacity
-
-  const timer = setInterval(() => {
-    if (op >= 1) {
-      clearInterval(timer);
-      if (!elementQ.isEmpty) {
-        appear(elementQ.dequeue());
-      }
-    }
-    // fading
-    $(element).css({
-      'opacity': op,
-      'filter': `alpha(opacity=${op * 100})`
+  // end button clicked and end website exp
+  function finish() {
+    [
+      $('.one'), $('.two'), $('.five1')
+    ].forEach(function(element) {
+      element.addClass('fade-out');
+      element.on('animationend', function() {
+        $(this).css('display', 'none');
+      });
     });
-    op += op * 0.1;
-  }, 10);
-}
 
-// decision-making function for display style
-function appear(element) {
-  const paragraph = $(element).find('p');
-  if (!paragraph.length) {
-    nontext(element);
-  } else {
-    printChar(element);
+    [
+      $('.three1'), $('.four'), $('.gif')
+    ].forEach(function(element) {
+      elementQ.enqueue(element[0]);
+    });
+
+    appear(elementQ.dequeue());
+    end.css('display', 'none');
   }
 
-// end button clicked and end website exp
-function finish() {
-  // get rid of all past elements that aren't ending text
-  [$('.one'),
-   $('.two'),
-   $('.five1')
-  ].forEach(element => {
-    element.addClass('fade-out');
-    element.one('animationend', () => {
-      element.css('display', 'none');
-    });
-  });
-
-  [$('.three1'),
-   $('.four')
-  ].forEach(element => elementQ.enqueue(element[0]));
+  // displays email
+  function email() {
+    elementQ.enqueue($('.five1'));
+    appear(elementQ.dequeue());
+  }
 
   appear(elementQ.dequeue());
-  end.css('display', 'none'); // remove end button 
-}
 
-// displays email
-function email() {
-  elementQ.enqueue($('.five1')[0]);
-  appear(elementQ.dequeue());
-}
+  const apiKey = 'medbyVVK7sVOtk26U1IhbS96DOiYaerM';
+
+  function fetchRandomGIF(tag) {
+    const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=${tag}&rating=g`;
 
     $.ajax({
       url: url,
